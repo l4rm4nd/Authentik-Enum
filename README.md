@@ -1,5 +1,5 @@
 # Authentik-Enum
-Simple Bash Script to Enumerate Authentik Version
+Simple Python3 Script to Enumerate Authentik Version
 
 ## How it works
 
@@ -7,10 +7,10 @@ Authentik uses versioned script includes (see [here](https://github.com/goauthen
 
 <img width="1938" height="603" alt="image" src="https://github.com/user-attachments/assets/834628f1-1cdc-465b-94b8-af1a92d5b06b" />
 
-This allows for unauthenticated version enumerations by file existence testing.
+This allows for unauthenticated version enumerations by file existence testing. Basically get all release versions from Github, then try to fetch each versioned JS file and display the result. If an exact versioned script was found (200 OK), you have enumerated the exact Authentik version in use.
 
 ## How to run
 
 ````bash
-./authentik-enum.sh
+python3 authentik-enum.py --verbose
 ````
