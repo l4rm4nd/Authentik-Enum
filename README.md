@@ -7,7 +7,10 @@ Authentik uses versioned script includes (see [here](https://github.com/goauthen
 
 <img width="1938" height="603" alt="image" src="https://github.com/user-attachments/assets/834628f1-1cdc-465b-94b8-af1a92d5b06b" />
 
-This allows for unauthenticated version enumerations by file existence testing. Basically get all release versions from Github, then try to fetch each versioned JS file and display the result. If an exact versioned script was found (200 OK), you have enumerated the exact Authentik version in use.
+This allows for unauthenticated version enumerations by file existence testing. Basically get all release versions from Github, then try to fetch each versioned JS file and display the result. If an exact versioned script was found (HTTP status 206 or 200), you have enumerated the exact Authentik version in use.
+
+> [!TIP]
+> If the server supports byte-range requests (most do for static assets), it responds with 206 to indicate it returned only part of the file. That’s a good sign, as the file exists and you avoided downloading a 50 KB (or bigger) JS file just to check if it’s there.
 
 ## How to run
 
