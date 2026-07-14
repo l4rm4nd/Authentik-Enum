@@ -18,14 +18,14 @@
     </p>
 </div>
 
-## Description
+## 💬 Description
 
 Authentik-Enum is a Python3 script that attempts to identify the exact version of a publicly accessible Authentik instance.
 
 > [!NOTE]
 > No credentials are required. Script only accesses publicly served static assets.
 
-## How It Works
+## 💎 How It Works
 
 Authentik uses versioned script includes in its administrative interface template.
 
@@ -58,15 +58,21 @@ A successful response indicates that the tested asset exists:
 > [!TIP]
 > A `206 Partial Content` response is expected when the target supports byte-range requests. This confirms that the asset exists without downloading the complete JavaScript file, which may be 50 KB or larger.
 
-## Requirements
+## ✨ Requirements
 
 * Python 3
 * Network access to the target Authentik instance
 * Network access to the GitHub API for retrieving Authentik releases
 
-## Usage
+## 🎓 Usage
 
-### Clone the Repository
+### 🐳 Example 1 - Docker Run
+
+````bash
+docker run --rm -t ghcr.io/l4rm4nd/authentik-enum:latest --base-url https://sso.example.com
+````
+
+### 🐍 Example 2 - Native Python
 
 ```bash
 git clone https://github.com/l4rm4nd/Authentik-Enum
@@ -75,7 +81,7 @@ cd Authentik-Enum
 python3 authentik-enum.py --base-url https://sso.example.com
 ```
 
-## Limitations
+## 💥 Limitations
 
 * **Custom frontend builds:** Modified or custom Authentik frontend bundles may use different filenames or paths.
 * **Reverse proxies:** A proxy, CDN, web application firewall, or authentication gateway may alter status codes or block the requests.
